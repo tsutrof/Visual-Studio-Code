@@ -1,0 +1,221 @@
+.header{
+    background: #404045;
+    // position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    .branding{  
+        display: flex;
+        align-items: center;
+
+        h3{
+            color: $clr-light;
+            margin-left: 1rem;
+            font-size: 2rem;
+        }
+
+        img{
+            width: 2.5rem;
+        }
+
+    }
+
+    &__actions{
+        display: none;
+    }
+
+    &__nav{
+        position: absolute;
+        background: $clr-dark;
+        top: 5.8rem;
+        width: 100%;
+        left: 0;
+        overflow-y: scroll;
+        transition: .2s ease;
+        height: 0;
+        
+        ul{
+            display: block;
+            text-align: left;
+            
+
+            li{
+                padding: 1rem 0;
+                margin-left: 2rem;
+
+                a{
+                    color: #ffffff;
+                    font-size: 1.7rem;
+                    text-decoration: none;
+                }
+
+            }
+
+
+            a.DL{
+                display: block;
+                background: $clr-primary;
+                text-decoration: none;
+                color: $clr-light;
+                font-size: 2rem;
+                padding: 1rem 0;
+                padding-left: 2rem;
+
+                i{
+                    margin-right: 1rem;
+                }
+
+                &:hover{
+                    background: darken($clr-primary, 5);
+                }
+                
+            }
+
+        }
+        &.open{
+            height: 36.2rem;
+
+
+        }
+    }
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .toggle__menu{
+        display: block;
+        border: 1px solid transparent;
+        padding: 0.3rem .8rem;
+        cursor: pointer;
+        transition: .2s ease;
+
+        &:hover{
+            border-radius: .5rem;
+            padding: 0.3rem .8rem;
+            background: $clr-primary;
+        }
+        
+        span{
+            width: 2.3rem;
+            height: .2rem;
+            background-color: $clr-light;
+            display: block;
+            margin: .5rem 0;
+            border-radius: 5rem;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        .container{
+            padding: 0;
+        }
+
+        .toggle__menu{
+            display: none;
+        }
+
+        &__nav{
+            display: none;
+
+            &.open{
+                display: none;
+            }
+        }
+
+        &__actions{
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            
+
+            .header__nav2{
+                margin-right: 40rem;
+
+                ul{
+                    display: flex;
+    
+                    li{
+                        margin-left: 2rem;
+    
+                        a{
+                            text-decoration: none;
+                            font-size: 1.7rem;
+                            color: $clr-gray;
+                        }
+    
+                        &:hover{
+                            a{
+                                color: $clr-light;
+                                transition: .2s ease;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .Search-Download{
+                display: flex;
+                align-items: center;
+
+                .search{
+                    background: $clr-gray;
+                    padding: 1.2rem 2rem;
+
+                    input{
+                        background: $clr-gray;
+                        text-align: left;
+                        padding: 1rem 0;
+                        border: none;
+                        outline: none;
+                        color: $clr-light;
+
+                        &::placeholder{
+                            color: $clr-light;
+                        }
+
+                        i{
+                            padding: 0 1rem 0 .5rem;
+                        }
+                    }
+
+                    i{
+                        color: $clr-light;
+                    }
+    
+
+                }
+
+                a{
+                    text-decoration: none;
+                    background: $clr-primary;
+                    color: $clr-light;
+                    height: auto;
+                    padding: 1.8rem;
+
+                    &:hover{
+                        background: darken($clr-primary, 5);
+                    }
+                    
+
+
+                    i{
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+
+        &__wrapper{
+            justify-content: unset;
+            align-items: center;
+
+        }
+
+
+        
+    }
+}
